@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MPALA POLICE STATION - We Are Here For You</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial; }
+body { height:100vh; overflow:hidden; display:flex; flex-direction:column; position:relative; background:#f4f6f8; }
+body::before { content:""; position:fixed; top:0; left:0; width:100%; height:100%; background:url('images/mpala.jpg') no-repeat center center; background-size:cover; opacity:0.12; z-index:-1; }
+
+/* BIGGER HEADER */
+.top-header { background:#002855; color:white; display:flex; justify-content:space-between; align-items:center; padding:10px 25px; height:90px; box-shadow:0 2px 8px rgba(0,0,0,0.3); }
+.logo-left { display:flex; align-items:center; }
+.logo { width:75px; height:75px; border-radius:50%; margin-right:18px; border:3px solid #ffcc00; } /* BIG LOGO */
+.station-title { font-size:32px; font-weight:bold; letter-spacing:0.5px; line-height:1.1; } /* BIG TITLE */
+.station-title small { display:block; font-size:13px; font-weight:normal; color:#ffcc00; letter-spacing:2px; margin-top:3px; }
+.top-nav { list-style:none; display:flex; }
+.top-nav li { margin-left:18px; }
+.top-nav a { color:white; text-decoration:none; font-size:14px; }
+
+.welcome { text-align:center; padding:10px; background:rgba(255,255,255,0.92); }
+.welcome h1 { color:#002855; font-size:20px; }
+.welcome p { color:#555; font-size:12px; margin-top:3px; font-style:italic; }
+
+.main-wrapper { flex:1; display:flex; padding:10px 15px; gap:15px; overflow:hidden; }
+.left-slides { width:62%; height:calc(100vh - 175px); position:relative; border-radius:12px; overflow:hidden; background:white; box-shadow:0 4px 20px rgba(0,0,0,0.15); }
+.slide { display:none; width:100%; height:100%; position:relative; background:white; }
+.slide.active { display:block; }
+.slide img { width:100%; height:calc(100% - 65px); object-fit:contain; background:white; display:block; }
+.caption-box { position:absolute; bottom:0; left:0; width:100%; height:65px; background:#002855; color:white; padding:8px 12px; display:flex; justify-content:space-between; align-items:center; }
+.caption-box h4 { color:#ffcc00; font-size:15px; }
+.caption-box span { font-size:11px; color:#ddd; display:block; margin-top:2px; }
+.caption-box a { background:#ffcc00; color:#002855; padding:6px 14px; border-radius:20px; text-decoration:none; font-size:12px; font-weight:bold; }
+.dots { position:absolute; top:12px; left:50%; transform:translateX(-50%); z-index:10; background:rgba(0,0,0,0.4); padding:6px 12px; border-radius:20px; }
+.dot { height:9px; width:9px; background:rgba(255,255,255,0.6); border-radius:50%; display:inline-block; margin:0 4px; cursor:pointer; }
+.dot.active { background:#ffcc00; width:20px; border-radius:5px; }
+
+.right-links { width:38%; height:calc(100vh - 175px); background:rgba(255,255,255,0.97); border-radius:12px; padding:15px; box-shadow:0 4px 20px rgba(0,0,0,0.08); display:flex; flex-direction:column; }
+.right-links h3 { color:#002855; font-size:14px; margin-bottom:5px; }
+.sub { font-size:11px; color:#777; margin-bottom:15px; }
+.link-btn { display:block; background:#f8f9fa; border:1px solid #e0e0e0; color:#002855; text-decoration:none; padding:12px; margin-bottom:10px; border-radius:10px; font-weight:600; font-size:13px; }
+.link-btn:hover { background:#002855; color:white; transform:translateX(5px); }
+.link-btn small { display:block; font-weight:normal; font-size:10px; color:#777; }
+.human-note { margin-top:auto; background:#fff8e1; border-left:4px solid #ffcc00; padding:10px; border-radius:5px; font-size:11px; color:#5d4037; line-height:1.4; }
+.footer { background:#002855; color:white; text-align:center; padding:8px; font-size:11px; height:36px; display:flex; justify-content:center; align-items:center; gap:10px; }
+.footer b { color:#ffcc00; }
+</style>
+</head>
+<body>
+
+<div class="top-header">
+  <div class="logo-left">
+    <img src="images/image.jpg" class="logo">
+    <div class="station-title">MPALA POLICE STATION <small>YOUR SAFETY, OUR DUTY</small></div>
+  </div>
+  <ul class="top-nav">
+    <li><a href="about.html">About us</a></li>
+    <li><a href="contact.html">Contact us</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+</div>
+
+<div class="welcome">
+  <h1>Welcome to Mpala, How can we help you today?</h1>
+  <p>"We are not just officers in uniform, we are your neighbours, here to listen, help and protect"</p>
+</div>
+
+<div class="main-wrapper">
+  <div class="left-slides">
+    <div class="dots">
+      <span class="dot active" onclick="go(1)"></span>
+      <span class="dot" onclick="go(2)"></span>
+      <span class="dot" onclick="go(3)"></span>
+      <span class="dot" onclick="go(4)"></span>
+      <span class="dot" onclick="go(5)"></span>
+    </div>
+    <div class="slide active"><img src="images/admin.jpg"><div class="caption-box"><div><h4>Administration</h4><span>Meet our friendly team</span></div><a href="admin.html">Visit →</a></div></div>
+    <div class="slide"><img src="images/services.jpg"><div class="caption-box"><div><h4>Our Services</h4><span>How we can support you</span></div><a href="services.html">Explore →</a></div></div>
+    <div class="slide"><img src="images/dept.jpg"><div class="caption-box"><div><h4>Departments</h4><span>One goal - your safety</span></div><a href="department.html">View →</a></div></div>
+    <div class="slide"><img src="images/criminal.jpg"><div class="caption-box"><div><h4>Criminal Records</h4><span>Quick & confidential</span></div><a href="criminal-records.html">Check →</a></div></div>
+    <div class="slide"><img src="images/report.jpg"><div class="caption-box"><div><h4>Report a Case</h4><span>Your voice matters</span></div><a href="report.html">Report →</a></div></div>
+  </div>
+
+  <div class="right-links">
+    <h3>What do you need help with?</h3>
+    <div class="sub">Choose a service - we will guide you, no judgment</div>
+    <a class="link-btn" href="admin.html">👮‍♂️ Administration <small>Talk to us, we are listening</small></a>
+    <a class="link-btn" href="services.html">🤝 Our Services <small>For you & community</small></a>
+    <a class="link-btn" href="department.html">🏢 Departments <small>Find the right person</small></a>
+    <a class="link-btn" href="report.html">🛡️ Report a Crime <small>Safe & confidential</small></a>
+    <a class="link-btn" href="criminal-records.html">📋 Criminal Records <small>Fast & respectful</small></a>
+    <div class="human-note">💛 <b>From OC:</b> "Mpala is our home too. Our door is always open. Your safety and dignity come first."</div>
+  </div>
+</div>
+
+<div class="footer"><span>© 2026 Mpala</span> <b>• PROTECT AND SERVE WITH HEART •</b> <span>Uganda Police - 24/7</span></div>
+
+<script>
+let idx=0;
+function show(){
+ let s=document.getElementsByClassName("slide");
+ let d=document.getElementsByClassName("dot");
+ for(let k=0;k<s.length;k++){s[k].classList.remove("active");d[k].classList.remove("active");}
+ idx++; if(idx>s.length){idx=1}
+ s[idx-1].classList.add("active");
+ d[idx-1].classList.add("active");
+ setTimeout(show,4000);
+}
+function go(n){idx=n-1; show();}
+show();
+</script>
+</body>
+</html>
